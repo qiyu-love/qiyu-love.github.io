@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>java面试总结（持续更新中）</title>
+    <link href="/2023/07/03/java%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/"/>
+    <url>/2023/07/03/java%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h1><h3 id="JDK-JRE"><a href="#JDK-JRE" class="headerlink" title="JDK JRE"></a>JDK JRE</h3><p>JDK：Java Development Kit 的简称，Java 开发工具包，提供了 Java 的开发环境和运行环境。</p><p>JRE：Java Runtime Environment 的简称，Java 运行环境，为 Java 的运行提供了所需环境。</p><span id="more"></span><h3 id="String、StringBuffer、StringBuilder。"><a href="#String、StringBuffer、StringBuilder。" class="headerlink" title="String、StringBuffer、StringBuilder。"></a>String、StringBuffer、StringBuilder。</h3><p>String 和 StringBuffer、StringBuilder 的区别在于 String 声明的是不可变的对象，每次操作都会生成新的 String 对象，然后将指针指向新的 String 对象，而 StringBuffer、StringBuilder 可以在原有对象的基础上进行操作，所以在经常改变字符串内容的情况下最好不要使用 String。</p><p>StringBuffer 是线程安全的，而 StringBuilder 是非线程安全的，但 StringBuilder 的性能却高于 StringBuffer，所以在单线程环境下推荐使用 StringBuilder，多线程环境下推荐使用 StringBuffer。</p><h3 id="Collection-和-Collections-有什么区别？"><a href="#Collection-和-Collections-有什么区别？" class="headerlink" title="Collection 和 Collections 有什么区别？"></a>Collection 和 Collections 有什么区别？</h3><p>Collection 是一个集合接口，它提供了对集合对象进行基本操作的通用接口方法，所有集合都是它的子类，比如 List、Set 等。<br>Collections 是一个包装类，包含了很多静态方法，不能被实例化，就像一个工具类，比如提供的排序方法：Collections. sort(list)。</p><h3 id="HashMap-和-Hashtable-有什么区别？"><a href="#HashMap-和-Hashtable-有什么区别？" class="headerlink" title="HashMap 和 Hashtable 有什么区别？"></a>HashMap 和 Hashtable 有什么区别？</h3><p>存储：HashMap 运行 key 和 value 为 null，而 Hashtable 不允许。<br>线程安全：Hashtable 是线程安全的，而 HashMap 是非线程安全的。<br>推荐使用：推荐在单线程环境下使用 HashMap 替代，如果需要多线程使用则用 ConcurrentHashMap 替代。</p><h3 id="ArrayList-和-Vector-的区别是什么？"><a href="#ArrayList-和-Vector-的区别是什么？" class="headerlink" title="ArrayList 和 Vector 的区别是什么？"></a>ArrayList 和 Vector 的区别是什么？</h3><p>线程安全：Vector 使用了 Synchronized 来实现线程同步，是线程安全的，而 ArrayList 是非线程安全的。<br>性能：ArrayList 在性能方面要优于 Vector。<br>扩容：ArrayList 和 Vector 都会根据实际的需要动态的调整容量，只不过在 Vector 扩容每次会增加 1 倍，而 ArrayList 只会增加 50%。</p><h3 id="Iterator-怎么使用？有什么特点？"><a href="#Iterator-怎么使用？有什么特点？" class="headerlink" title="Iterator 怎么使用？有什么特点？"></a>Iterator 怎么使用？有什么特点？</h3><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs livescript">List&lt;<span class="hljs-built_in">String</span>&gt; <span class="hljs-keyword">list</span> = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>Iterator&lt;<span class="hljs-built_in">String</span>&gt; <span class="hljs-literal">it</span> = <span class="hljs-keyword">list</span>. iterator();<br><span class="hljs-keyword">while</span>(<span class="hljs-literal">it</span>. hasNext())&#123;<br>  <span class="hljs-built_in">String</span> obj = <span class="hljs-literal">it</span>. next();<br>  System. out. println(obj);<br>&#125;<br></code></pre></td></tr></table></figure><p>Iterator 的特点是更加安全，因为它可以确保，在当前遍历的集合元素被更改的时候，就会抛出 ConcurrentModificationException 异常。</p><h3 id="sleep-和-wait-有什么区别？"><a href="#sleep-和-wait-有什么区别？" class="headerlink" title="sleep() 和 wait() 有什么区别？"></a>sleep() 和 wait() 有什么区别？</h3><p>类的不同：sleep() 来自 Thread，wait() 来自 Object。<br>释放锁：sleep() 不释放锁；wait() 释放锁。<br>用法不同：sleep() 时间到会自动恢复；wait() 可以使用 notify()&#x2F;notifyAll()直接唤醒。</p><h3 id="什么是反射？"><a href="#什么是反射？" class="headerlink" title="什么是反射？"></a>什么是反射？</h3><p>反射是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 Java 语言的反射机制。</p><h3 id="什么是-Java-序列化？什么情况下需要序列化？"><a href="#什么是-Java-序列化？什么情况下需要序列化？" class="headerlink" title="什么是 Java 序列化？什么情况下需要序列化？"></a>什么是 Java 序列化？什么情况下需要序列化？</h3><p>Java 序列化是为了保存各种对象在内存中的状态，并且可以把保存的对象状态再读出来。</p><p>以下情况需要使用 Java 序列化：</p><p>想把的内存中的对象状态保存到一个文件中或者数据库中时候；<br>想用套接字在网络上传送对象的时候；<br>想通过RMI（远程方法调用）传输对象的时候。</p><h1 id="java-web"><a href="#java-web" class="headerlink" title="java web"></a>java web</h1><h1 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h1><h1 id="多线程、线程池"><a href="#多线程、线程池" class="headerlink" title="多线程、线程池"></a>多线程、线程池</h1><h3 id="violatile-关键字的作用？"><a href="#violatile-关键字的作用？" class="headerlink" title="violatile 关键字的作用？"></a>violatile 关键字的作用？</h3><p>多线程主要围绕可见性和原子性两个特性而展开，使用 volatile 关键字修饰的变量，保证了其在多线程之间的可见性，即每次读取到 volatile 变量，一定是最新的数据</p><h3 id="什么是原子性、可见性、有序性？"><a href="#什么是原子性、可见性、有序性？" class="headerlink" title="什么是原子性、可见性、有序性？"></a>什么是原子性、可见性、有序性？</h3><ul><li><p>原子性<br>原子性是指一个线程的操作是不能被其他线程打断，同一时间只有一个线程对一个变量进行操作。在多线程情况下，每个线程的执行结果不受其他线程的干扰，比如说多个线程同时对同一个共享成员变量 n++100 次，如果n 初始值为0，n 最后的值应该是 100，所以说它们是互不干扰的，这就是传说的中的原子性。但n++并不是原子性的操作，要使用 AtomicInteger 保证原子性。</p></li><li><p>可见性<br>可见性是指某个线程修改了某一个共享变量的值，而其他线程是否可以看见该共享变量修改后的值。每个线程都有自己的工作内存，线程先把共享变量的值从主内存读到工作内存，形成一个副本，当计算完后再把副本的值刷回主内存，从读取到最后刷回主内存这是一个过程，当还没刷回主内存的时候这时候对其他线程是不可见的，所以其他线程从主内存读到的值是修改之前的旧值。像CPU 的缓存优化、硬件优化、指令重排及对 JVM 编译器的优化，都会出现可见性的问题。</p></li><li><p>有序性<br>我们都知道程序是按代码顺序执行的，对于单线程来说确实是如此，但在多线程情况下就不是如此了。为了优化程序执行和提高 CPU 的处理性能，JVM和操作系统都会对指令进行重排，也就说前面的代码并不一定都会在后面的代码前面执行，即后面的代码可能会插到前面的代码之前执行，只要不影响当前线程的执行结果。所以，指令重排只会保证当前线程执行结果一致，但指令重排后势必会影响多线程的执行结果。虽然重排序优化了性能，但也是会遵守一些规则的，并不能随便乱排序，只是重排序会影响多线程执行的结果。</p></li></ul><h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>索引为什么提高效率</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+      <tag>面试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>搭建个人博客 看这一篇就够了</title>
+    <link href="/2023/07/02/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2023/07/02/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h1><blockquote><p>注意mac版本千万不要使用xcode进行安装，否则会出现一个极其恶心的错误，且无法解决</p></blockquote><span id="more"></span><p><a href="https://www.jianshu.com/p/265b2c653e6f">https://www.jianshu.com/p/265b2c653e6f</a><br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a href="https://wizard.blog.csdn.net/article/details/40684575?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.no_search_link">https://wizard.blog.csdn.net/article/details/40684575?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.no_search_link</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>githubpage</tag>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
