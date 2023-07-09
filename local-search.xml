@@ -4,13 +4,25 @@
   
   
   <entry>
-    <title>“每日一曲”</title>
-    <link href="/2023/07/09/%E2%80%9C%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2%E2%80%9D/"/>
-    <url>/2023/07/09/%E2%80%9C%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2%E2%80%9D/</url>
+    <title>每日一曲--《任我行》</title>
+    <link href="/2023/07/09/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2-%E3%80%8A%E4%BB%BB%E6%88%91%E8%A1%8C%E3%80%8B/"/>
+    <url>/2023/07/09/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2-%E3%80%8A%E4%BB%BB%E6%88%91%E8%A1%8C%E3%80%8B/</url>
     
-    <content type="html"><![CDATA[<p><img src="/2023/07/09/%E2%80%9C%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B2%E2%80%9D/2.png" alt="2"></p>]]></content>
+    <content type="html"><![CDATA[<p class="note note-primary">标签</p>]]></content>
     
     
+    <categories>
+      
+      <category>music</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>陈奕迅</tag>
+      
+    </tags>
     
   </entry>
   
@@ -36,33 +48,6 @@
       <tag>java</tag>
       
       <tag>面试</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>搭建个人博客 看这一篇就够了</title>
-    <link href="/2023/07/02/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <url>/2023/07/02/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    
-    <content type="html"><![CDATA[<h1 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h1><blockquote><p>注意mac版本千万不要使用xcode进行安装，否则会出现一个极其恶心的错误，且无法解决</p></blockquote><span id="more"></span><p><a href="https://www.jianshu.com/p/265b2c653e6f">https://www.jianshu.com/p/265b2c653e6f</a><br><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">https://blog.csdn.net/sinat_37781304/article/details/82729029</a><br><a href="https://wizard.blog.csdn.net/article/details/40684575?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~default-5.no_search_link">https://wizard.blog.csdn.net/article/details/40684575?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-5.no_search_link</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>学习</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>githubpage</tag>
-      
-      <tag>hexo</tag>
       
     </tags>
     
