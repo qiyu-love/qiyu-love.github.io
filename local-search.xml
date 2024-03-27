@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>3.25算法总结</title>
-    <link href="/2024/03/27/3-25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
-    <url>/2024/03/27/3-25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
+    <title>03.25 算法总结</title>
+    <link href="/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/"/>
+    <url>/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</url>
     
-    <content type="html"><![CDATA[<h1 id="24-03-25-算法总结–链表部分"><a href="#24-03-25-算法总结–链表部分" class="headerlink" title="24.03.25 算法总结–链表部分"></a>24.03.25 算法总结–链表部分</h1><h2 id="第一部分-快慢指针的运用"><a href="#第一部分-快慢指针的运用" class="headerlink" title="第一部分 快慢指针的运用"></a>第一部分 快慢指针的运用</h2><h3 id="倒数第k个结点"><a href="#倒数第k个结点" class="headerlink" title="倒数第k个结点"></a>倒数第k个结点</h3><p>由于链表无法像array那样，根据索引快速获取对应索引值的数据，因此只能通过类似遍历的方法获得对应结点的索引。</p><p>但是如果我想找到倒数第k个结点呢？难道要遍历两遍吗，因为获得链表的长度就需要遍历一遍链表得到。</p><blockquote><p>由此我们可以想到通过快慢指针的方法</p></blockquote><p><img src="/2024/03/27/3-25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240326222935590-1528490.png" alt="image-20240326222935590"></p><p>由上图所示，先将快指针移动k，这样两个指针之间的距离则为k；现在让这两个指针同时移动，知道快指针为null，这样慢指针刚好为第k-1个指针！！妙哉！！</p><h3 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h3><blockquote><p>判断链表是否有环，若没有则返回null，若有则返回环的入口</p></blockquote><p>若是单纯判断链表是否有环，较为简单，运用我们刚学到的快慢指针即可解决。</p><p>让快指针每次移动2个结点，慢指针移动1个结点。这样如果快指针为空，则证明肯定无环；如果两个指针相遇，则有环。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="第一部分-快慢指针的运用"><a href="#第一部分-快慢指针的运用" class="headerlink" title="第一部分 快慢指针的运用"></a>第一部分 快慢指针的运用</h1><h2 id="倒数第k个结点"><a href="#倒数第k个结点" class="headerlink" title="倒数第k个结点"></a>倒数第k个结点</h2><p>由于链表无法像Array那样，根据索引快速获取对应索引值的数据，因此只能通过类似遍历的方法获得对应结点的索引，这也使他产生了以下问题：</p><p>如果我想找到倒数第k个结点呢？难道要遍历两遍吗，因为获得链表的长度就需要遍历一遍链表</p><blockquote><p>快慢指针</p></blockquote><p><img src="/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240326222935590-1528490.png" alt="image-20240326222935590"></p><p>由上图所示，先将快指针移动k，这样两个指针之间的距离则为k；现在让这两个指针同时移动，直到快指针指向的结点为null，这样慢指针刚好为第k-1个指针！！妙哉！！</p><h2 id="中间结点"><a href="#中间结点" class="headerlink" title="中间结点"></a>中间结点</h2><p>相较上一个问题来说，这个就简单了许多。</p><p>由于fast的速度永远是slow的2倍，</p><ul><li>那么若是总结点个数为基数，则当fast指向最后一个结点时，slow刚好指向中间结点</li><li>若总结点为偶数，当fast指向空结点时，slow指向中间结点</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 这样设置判断条件，可以使快指针刚好落到上述两种情况</span><br><span class="hljs-keyword">while</span>(q != <span class="hljs-literal">null</span> &amp;&amp; q.next != <span class="hljs-literal">null</span>) &#123;<br>            p = p.next;<br>            q = q.next.next;<br>        &#125;<br></code></pre></td></tr></table></figure><h2 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h2><blockquote><p>判断链表是否有环，若没有则返回null，若有则返回环的入口</p></blockquote><p>若是单纯判断链表是否有环，较为简单，运用我们刚学到的快慢指针即可解决。</p><p>让快指针每次移动2个结点，慢指针移动1个结点。这样如果快指针为空，则证明肯定无环；如果两个指针相遇，则有环。</p>]]></content>
     
     
     
