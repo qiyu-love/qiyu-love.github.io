@@ -24,8 +24,9 @@
 <meta property="og:description" content="第一部分 快慢指针的运用倒数第k个结点由于链表无法像Array那样，根据索引快速获取对应索引值的数据，因此只能通过类似遍历的方法获得对应结点的索引，这也使他产生了以下问题： 如果我想找到倒数第k个结点呢？难道要遍历两遍吗，因为获得链表的长度就需要遍历一遍链表  快慢指针   由上图所示，先将快指针移动k，这样两个指针之间的距离则为k；现在让这两个指针同时移动，直到快指针指向的结点为null，这样慢">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240326222935590-1528490.png">
+<meta property="og:image" content="http://example.com/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240328215658287.png">
 <meta property="article:published_time" content="2024-03-27T14:54:29.000Z">
-<meta property="article:modified_time" content="2024-03-27T14:55:14.687Z">
+<meta property="article:modified_time" content="2024-03-28T14:03:06.545Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          423 words
+          545 words
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          4 mins
+          5 mins
         
       </span>
     
@@ -295,6 +296,18 @@
 </blockquote>
 <p>若是单纯判断链表是否有环，较为简单，运用我们刚学到的快慢指针即可解决。</p>
 <p>让快指针每次移动2个结点，慢指针移动1个结点。这样如果快指针为空，则证明肯定无环；如果两个指针相遇，则有环。</p>
+<blockquote>
+<p>但是如何找到环的入口呢？</p>
+</blockquote>
+<p>对于我这种数学不好的人，还是不用公式推导了，建议使用归纳法</p>
+<p><img src="/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240328215658287.png" srcset="/img/loading.gif" lazyload alt="image-20240328215658287"></p>
+<p>由于我们只能得到两指针的相遇点，那么我们是不是可以找找入口和相遇点的关系</p>
+<p>根据上图所示，两指针在6相遇</p>
+<blockquote>
+<p>从6到入口的距离和从链表头到起点的距离相等！！</p>
+</blockquote>
+<p>问题引刃而解</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/description/">刷刷这道题就好了</a></p>
 
                 
               </div>
@@ -302,6 +315,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%AF%8F%E5%91%A8%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="category-chain-item">每周算法总结</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">
@@ -364,15 +398,15 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/07/04/lstm%E5%AD%A6%E4%B9%A0/" title="lstm 学习">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">lstm 学习</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2024/03/27/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
