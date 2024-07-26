@@ -18,23 +18,23 @@
   
     <meta name="description" content="第一部分 快慢指针的运用倒数第k个结点由于链表无法像Array那样，根据索引快速获取对应索引值的数据，因此只能通过类似遍历的方法获得对应结点的索引，这也使他产生了以下问题： 如果我想找到倒数第k个结点呢？难道要遍历两遍吗，因为获得链表的长度就需要遍历一遍链表  快慢指针   由上图所示，先将快指针移动k，这样两个指针之间的距离则为k；现在让这两个指针同时移动，直到快指针指向的结点为null，这样慢">
 <meta property="og:type" content="article">
-<meta property="og:title" content="03.25 算法总结">
-<meta property="og:url" content="http://example.com/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="链表算法总结">
+<meta property="og:url" content="http://example.com/2024/03/26/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="第一部分 快慢指针的运用倒数第k个结点由于链表无法像Array那样，根据索引快速获取对应索引值的数据，因此只能通过类似遍历的方法获得对应结点的索引，这也使他产生了以下问题： 如果我想找到倒数第k个结点呢？难道要遍历两遍吗，因为获得链表的长度就需要遍历一遍链表  快慢指针   由上图所示，先将快指针移动k，这样两个指针之间的距离则为k；现在让这两个指针同时移动，直到快指针指向的结点为null，这样慢">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240326222935590-1528490.png">
-<meta property="og:image" content="http://example.com/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240328215658287.png">
-<meta property="article:published_time" content="2024-03-27T14:54:29.000Z">
-<meta property="article:modified_time" content="2024-03-28T14:03:06.545Z">
+<meta property="og:image" content="http://example.com/2024/03/26/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95/image-20240326222935590-1528490.png">
+<meta property="og:image" content="http://example.com/2024/03/26/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95/image-20240328215658287.png">
+<meta property="article:published_time" content="2024-03-26T14:16:35.002Z">
+<meta property="article:modified_time" content="2024-07-26T03:02:54.547Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Linked List">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240326222935590-1528490.png">
+<meta name="twitter:image" content="http://example.com/2024/03/26/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95/image-20240326222935590-1528490.png">
   
   
   
-  <title>03.25 算法总结 - Hexo</title>
+  <title>链表算法总结 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="03.25 算法总结"></span>
+            <span id="subtitle" data-typed-text="链表算法总结"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-03-27 22:54" pubdate>
-          March 27, 2024 pm
+        <time datetime="2024-03-26 22:16" pubdate>
+          March 26, 2024 pm
         </time>
       </span>
     
@@ -271,7 +271,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">03.25 算法总结</h1>
+            <h1 id="seo-header">链表算法总结</h1>
             
             
               <div class="markdown-body">
@@ -281,7 +281,7 @@
 <blockquote>
 <p>快慢指针</p>
 </blockquote>
-<p><img src="/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240326222935590-1528490.png" srcset="/img/loading.gif" lazyload alt="image-20240326222935590"></p>
+<p><img src="/2024/03/26/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95/image-20240326222935590-1528490.png" srcset="/img/loading.gif" lazyload alt="image-20240326222935590"></p>
 <p>由上图所示，先将快指针移动k，这样两个指针之间的距离则为k；现在让这两个指针同时移动，直到快指针指向的结点为null，这样慢指针刚好为第k-1个指针！！妙哉！！</p>
 <h2 id="中间结点"><a href="#中间结点" class="headerlink" title="中间结点"></a>中间结点</h2><p>相较上一个问题来说，这个就简单了许多。</p>
 <p>由于fast的速度永远是slow的2倍，</p>
@@ -300,7 +300,7 @@
 <p>但是如何找到环的入口呢？</p>
 </blockquote>
 <p>对于我这种数学不好的人，还是不用公式推导了，建议使用归纳法</p>
-<p><img src="/2024/03/27/3.25%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/image-20240328215658287.png" srcset="/img/loading.gif" lazyload alt="image-20240328215658287"></p>
+<p><img src="/2024/03/26/%E9%93%BE%E8%A1%A8%E7%AE%97%E6%B3%95/image-20240328215658287.png" srcset="/img/loading.gif" lazyload alt="image-20240328215658287"></p>
 <p>由于我们只能得到两指针的相遇点，那么我们是不是可以找找入口和相遇点的关系</p>
 <p>根据上图所示，两指针在6相遇</p>
 <blockquote>
@@ -326,7 +326,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%AF%8F%E5%91%A8%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="category-chain-item">每周算法总结</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -341,7 +341,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/Linked-List/" class="print-no-link">#Linked List</a>
       
     </div>
   
@@ -353,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>03.25 算法总结</div>
-      <div>http://example.com/2024/03/27/3.25算法总结/</div>
+      <div>链表算法总结</div>
+      <div>http://example.com/2024/03/26/链表算法/</div>
     </div>
     <div class="license-meta">
       
@@ -366,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 27, 2024</div>
+          <div>March 26, 2024</div>
         </div>
       
       
@@ -398,9 +398,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/07/04/lstm%E5%AD%A6%E4%B9%A0/" title="lstm 学习">
+                      <a href="/2024/07/04/lstm%E5%AD%A6%E4%B9%A0/" title="xlstm 学习">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">lstm 学习</span>
+                        <span class="hidden-mobile">xlstm 学习</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
